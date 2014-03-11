@@ -17,6 +17,7 @@ $(document).ready(function(){
       success: function (data) {
         mArray = data.results;
         _.each(mArray, function(msg){
+          var roomArray = [];
           var currentMessage = msg.username + " : " + msg.text;
           var $room = $("<div class=" + msg.roomname + "></div>");
           var $message = $('<ul class=' + msg.username + '></ul>').text(currentMessage);
@@ -67,7 +68,7 @@ $(document).ready(function(){
     });
 
      $('#refresh').on('click', function(){
-       // location.reload(true);
+       location.reload(true);
      });
 
      $('#userInput').keyup(function(event){
